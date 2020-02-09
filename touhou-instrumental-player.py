@@ -29,12 +29,14 @@ def getUpperBound(session, url, lowerBound):
         return lowerBound+1
 
 def getHighestPage(session, url, lowerBound, upperBound):
+    print("Getting middle page")
     middlePage = int((lowerBound+upperBound)/2)
     middleUrl = changePage(url, middlePage)
     middleSite = session.get(middleUrl)
     middleSoup = BeautifulSoup(middleSite.text, 'html.parser')
     match = middleSoup.findAll('div', class_='pure-u-1 pure-u-md-1-4')
     if match != []:
+        print("Not match")
         nextUrl = changePage(url, middlePage+1)
         nextSite = session.get(nextUrl)
         nextSoup = BeautifulSoup(nextSite.text, 'html.parser')
@@ -44,6 +46,7 @@ def getHighestPage(session, url, lowerBound, upperBound):
         else:
             return middlePage
     else:
+        print("Match")
         previousUrl = changePage(url, middlePage-1)
         previousSite = session.get(previousUrl)
         previousSoup = BeautifulSoup(previousSite.text, 'html.parser')
@@ -103,7 +106,7 @@ def score(title):
     score = 0
     f = open(sys.argv[1], "r")
     for line in f:
-        line_divided = line.split(',', maxsplit=1)
+        line_divided = line.split('█', maxsplit=1)
         line_text = line_divided[0]
         line_score = int(line_divided[1])
         match = re.search(line_text, title, re.IGNORECASE)
@@ -115,7 +118,7 @@ def score(title):
 def getFilterInput(message, title):
     while True:
         user_input = input(message)
-        match = re.search(r"^.*\,.*\d+$", user_input)
+        match = re.search(r".*\,.*\d", user_input)
         if not match and user_input != "A":
             print("Wrongly formatted input, try again.\n")
             continue
@@ -127,7 +130,8 @@ def getFilterInput(message, title):
             except ValueError:
                 print("Wrongly formatted score, try again.\n")
                 continue
-            return user_input + ',' + str(user_score) + '\n'
+            user_input = re.sub('\|\||\&\&|\&|\|', '', user_input)
+            return user_input + ', ' + str(user_score) + '\n'
         return user_input + '\n'
 
 def addFilter(title):
@@ -139,22 +143,32 @@ def addFilter(title):
 session = requests.Session()
 session.headers.update({'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'})
 
-print("Getting highest page...")
+print("Getting upper bound page...")
 upperBound = getUpperBound(session, instrumental, 1)
+print("Getting highest page...")
 highestPage = getHighestPage(session, links[mainTheme], upperBound/4-1, upperBound)
+print("Getting random page...")
 randomPage = random.randint(1,highestPage)
+print("Getting list of videos...")
 listOfVideos = getListOfVideos(getListOfHrefs(session, links[mainTheme], randomPage))
 while True:
+    print("Entering loop")
     for element in listOfVideos:
+        print(element)
         if len(sys.argv) > 1:
             points = score(element[1])
+            print("Points: " + str(points))
             if points <= 0:
+                print("Points below or equal zero, skipping")
                 continue
+        print("Setting title")
         title = element[1]
+        print("Setting address")
         address = element[0]
         print(title)
         print(address)
-        print("Touhou-ness score: " + str(points))
+        if len(sys.argv) > 1:
+            print("Touhou-ness score: " + str(points))
         subprocess.call(["mpv", "--no-video", "--af=scaletempo=speed=both", "--audio-pitch-correction=no", "--ytdl-format=bestaudio", element[0]])
         choice = getChoice("Press 1 to download the file, press 2 to go to the next, press 3 to add a new filter, press Q to quit.\n")
         if choice == "1":

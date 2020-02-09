@@ -1,44 +1,53 @@
-vocal, -100
-subbed, -100
-sub, -100
-subtitle, -100
-cover, -30
-lyrics, -100
-vietnamese, -100
-brazillian, -100
-lego, -100
-doom, -100
-instrumental, +20
-classical, +20
-classic, +20
-bgm, +20
-boss, +20
-stage, +20
-eosd, +20
-touhou, +20
-embodiment of scarlet devil, +20
-perfect cherry blossom, +20
-pcb, +20
-immaterial and missing power, +20
-imperishable night, +20
-phantasmagoria of flower view, +20
-shoot the bullet, +20
-mountain of faith, +20
-scarlet weather rhapsody, +20
-subterrean animism, +20
-undefined fantastic object, +20
-touhou hisoutensoku, +20
-double spoiler, +20
-fairy wars, +20
-ten desires, +20
-hopeless masquerade, +20
-double dealing character, +20
-impossible spell card, +20
-urban legend in limbo, +20
-legacy of lunatic kingdom, +20
-antinomy of color flowers, +20
-hidden star in four seasons, +20
-violet detector, +20
-willy beast and weakest creature, +20
-touhou gouyoku ibun, +20
-discussion, -1000
+vocal█ -100
+subbed█ -100
+sub█ -100
+subtitle█ -100
+cover█ -30
+lyrics█ -100
+vietnamese█ -100
+brazillian█ -100
+lego█ -100
+doom█ -100
+instrumental█ +20
+classical█ +20
+classic█ +20
+bgm█ +20
+boss█ +20
+stage█ +20
+eosd█ +20
+touhou█ +20
+embodiment of scarlet devil█ +20
+perfect cherry blossom█ +20
+pcb█ +20
+immaterial and missing power█ +20
+imperishable night█ +20
+phantasmagoria of flower view█ +20
+shoot the bullet█ +20
+mountain of faith█ +20
+scarlet weather rhapsody█ +20
+subterrean animism█ +20
+undefined fantastic object█ +20
+touhou hisoutensoku█ +20
+double spoiler█ +20
+fairy wars█ +20
+ten desires█ +20
+hopeless masquerade█ +20
+double dealing character█ +20
+impossible spell card█ +20
+urban legend in limbo█ +20
+legacy of lunatic kingdom█ +20
+antinomy of color flowers█ +20
+hidden star in four seasons█ +20
+violet detector█ +20
+willy beast and weakest creature█ +20
+touhou gouyoku ibun█ +20
+discussion█ -1000
+[Symphonic Touhou] #01 Symphonic Touhou(Instrumental)  #02 Sky Comet█-200
+The Notorious Touhou Vs. Arcade Shmup Divide! Patreon Vid for Gus█-1000
+^Installing Touhou 7 Perfect Cherry Blossom in English█-1000
+^Touhou MUGEN - New Character: Junko█-1000
+^Classical Meme Music vs Meme Music█-1000
+^When youâre a classical pianist but you listened to hip hop once█-1000
+^Fallout 4: Classical Radio (all songs)█-1000
+^Touhou 08 - Imperishable Night Extra Stage Clear█-1000
+^ãJapanãTouhou ãBad Apple!!ã -classical guitar inst Take2- æ±æ¹ããããã¢ããã«!!ãã¯ã©ã·ãã¯ã®ã¿ã¼ã¤ã³ã¹ãTake2ãgame musicã$█-1000

@@ -1,0 +1,9 @@
+* Requirements
+*** python 
+***** Comes with nearly every linux distribution.
+*** requests
+***** pip install requests (https://pypi.org/project/requests/)
+*** BeautifulSoup4
+***** pip install beautifulsoup4 (https://pypi.org/project/beautifulsoup4/)
+* Usage
+***** Run the script with python. You can add the scoring.txt or your own filter file in format filter█ score as a command-line argument, this yields more accurate searches.
