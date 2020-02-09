@@ -106,9 +106,9 @@ def score(title):
     score = 0
     f = open(sys.argv[1], "r")
     for line in f:
-        line_divided = line.split('█', maxsplit=1)
-        line_text = line_divided[0]
-        line_score = int(line_divided[1])
+        line_divided = line.split(',', maxsplit=1)
+        line_score = int(line_divided[0])
+        line_text = line_divided[1]
         match = re.search(line_text, title, re.IGNORECASE)
         if match:
             score+=line_score
@@ -131,7 +131,7 @@ def getFilterInput(message, title):
                 print("Wrongly formatted score, try again.\n")
                 continue
             user_input = re.sub('\|\||\&\&|\&|\|', '', user_input)
-            return user_input + '█ ' + str(user_score) + '\n'
+            return str(user_score)  + ', ' + user_input + '\n'
         return user_input + '\n'
 
 def addFilter(title):
