@@ -8,4 +8,4 @@
 *** youtube-dl
 ***** youtube-dl (https://youtube-dl.org/) for downloading
 * Usage
-***** Run the script with python. You can add the scoring.txt or your own filter file in format filter█ score as a command-line argument, this yields more accurate searches.
+***** Run the script with python. You can add the scoring.txt or your own filter file in format score,filter as a command-line argument, this yields more accurate searches.
