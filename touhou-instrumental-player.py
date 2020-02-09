@@ -131,7 +131,7 @@ def getFilterInput(message, title):
                 print("Wrongly formatted score, try again.\n")
                 continue
             user_input = re.sub('\|\||\&\&|\&|\|', '', user_input)
-            return user_input + ', ' + str(user_score) + '\n'
+            return user_input + '█ ' + str(user_score) + '\n'
         return user_input + '\n'
 
 def addFilter(title):
